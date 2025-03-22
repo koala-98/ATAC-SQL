@@ -4,9 +4,9 @@
 UPDATE Products
 SET UnitPrice = UnitPrice * 1.1
 WHERE CategoryID = (SELECT c.CategoryID 
-					FROM Products p 
-					JOIN Categories c on p.CategoryID = c.CategoryID
-					WHERE c.CategoryName = 'Beverages');
+				FROM Products p 
+				JOIN Categories c on p.CategoryID = c.CategoryID
+				WHERE c.CategoryName = 'Beverages');
 
 /*Query nay de kiem tra UnitPrice sau khi update */
 SELECT p.ProductID, p.ProductName, p.UnitPrice, c.CategoryName
