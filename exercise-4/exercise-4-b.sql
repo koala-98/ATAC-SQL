@@ -5,7 +5,7 @@ INSERT INTO Products (ProductName, SupplierID, CategoryID, UnitPrice, UnitsInSto
 VALUES (
     'Organic Coffee', -- ProductName
     (SELECT SupplierID FROM Suppliers ORDER BY RANDOM() LIMIT 1), -- Lay ngau nhien 1 dong trong bang Suppliers
-    (SELECT CategoryID FROM Categories WHERE CategoryName = 'Beverages'), -- Lay CategoryID co CategoryName la Beverages
+    (SELECT CategoryID FROM Categories WHERE CategoryName = 'Beverages' LIMIT 1), -- Lay CategoryID co CategoryName la Beverages
     25.00, -- UnitPrice
     100); -- UnitsInStock
 
