@@ -3,7 +3,7 @@
 - SUM(od.UnitPrice * od.Quantity) Tinh tong doanh thu cua khach hang, trong bang Order Details, OrderID xuat hien nhieu lan, vay nen dung
 SUM de cong don cho moi khach han*/
 
-SELECT o.CustomerID, SUM(od.UnitPrice * od.Quantity) AS TotalRevenue
+SELECT o.CustomerID, c.CompanyName, SUM(od.UnitPrice * od.Quantity) AS TotalRevenue
 FROM Orders o
 JOIN "Order Details" od ON o.OrderID = od.OrderID
 JOIN Customers c ON o.CustomerID = c.CustomerID
